@@ -2,12 +2,12 @@ require("dotenv").config()
 
 // async errors
 require('express-async-error')
-
+const morgan = require('morgan');
 
 //express
 const express = require("express")
 const app = express()
-
+app.use(morgan('dev'));
 // middleware
 const errorHandlerMiddleware = require('./middleware/error-handler')
 const notFoundMiddleware = require('./middleware/not-found')
